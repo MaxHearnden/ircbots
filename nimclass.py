@@ -8,12 +8,14 @@ class nim:
         #print a
     def nimmove(s,a,b,c):
         #print a
-        name = a[0].split("!")[0][1:]
+        print s.nimmem
+        name = a[0].split("!")[0][1:]    #uncomment to see the memory
         if name in s.nimmem:
             try:
                 go = int(a[3][1:])
                 tmp = s.nimmem[name]
                 tmp[0]+=s.test(go,tmp[2])
+                rgo = s.test(go,tmp[2])
                 if tmp[0] >= tmp[1]:
                     hexchat.command("msg "+name+" you've won nim, congratulations, we'll send the 1 million pounds when we get round to it (never)")
                     del s.nimmem[name]

@@ -8,8 +8,8 @@ class nim:
         #print a
     def nimmove(s,a,b,c):
         #print a
-        print s.nimmem
-        name = a[0].split("!")[0][1:]    #uncomment to see the memory
+        #print s.nimmem          # uncomment to see memory
+        name = a[0].split("!")[0][1:]
         if name in s.nimmem:
             try:
                 go = int(a[3][1:])
@@ -22,7 +22,7 @@ class nim:
                 else:
                     comgo=s.test((tmp[1]-tmp[0])%(tmp[2]+1),tmp[2])
                     tmp[0]+=comgo
-                    hexchat.command("msg "+name+" you played "+str(go)+" and I played "+str(comgo)+" which brung the total to "+str(tmp[0]))
+                    hexchat.command("msg "+name+" you played "+str(rgo)+" and I played "+str(comgo)+" which brung the total to "+str(tmp[0]))
                     if tmp[0] >= tmp[1]:
                         hexchat.command("msg "+name+" i win nim and I get 1 million pounds, bye")
                         del s.nimmem[name]

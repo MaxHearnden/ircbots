@@ -39,6 +39,11 @@ class nim:
                     comgo=s.test((tmp[1]-tmp[0])%(tmp[2]+1),tmp[2])
                     tmp[0]+=comgo
                     hexchat.command("msg "+name+" I played "+str(comgo)+" which brung the total to "+str(tmp[0]))
+                    if tmp[0] >= tmp[1]:
+                        hexchat.command("msg "+name+" i win nim and I get 1 million pounds, bye")
+                        del s.nimmem[name]
+                    else:
+                        s.nimmem[name] = tmp
                 except:
                     hexchat.command("msg "+name+" setup must be valid")
                     del s.nimmem[name]

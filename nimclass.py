@@ -29,7 +29,18 @@ class nim:
             except:
                 hexchat.command("msg "+name+" go must be an interger")
         else:
-            if a[3][1:4] == "set":
+            if a[3][1:] == "setfirst":
+                try:
+                    s.nimmem[name] = a[4].split(",")
+                    s.nimmem[name] = [0]+[int(s.nimmem[name][0])]+[int(s.nimmem[name][1])]
+                    tmp=s.nimmem[name]
+                    comgo=s.test((tmp[1]-tmp[0])%(tmp[2]+1),tmp[2])
+                    tmp[0]+=comgo
+                    hexchat.command("msg "+name+" I played "+str(comgo)+" which brung the total to "+str(tmp[0]))
+                except:
+                    hexchat.command("msg "+name+" setup must be valid")
+                    del s.nimmem[name]
+            elif a[3][1:] == "set":
                 try:
                     #print( a[4][1] )
                     s.nimmem[name] = a[4].split(",")

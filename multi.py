@@ -112,7 +112,7 @@ class loader:
             s.nim = hexchat.hook_server("PRIVMSG",tmp.nimmove)
         else:
             hexchat.prnt("arguments must be valid")
-        return hexchat.EAT_NONE
+        return hexchat.EAT_HEXCHAT
     def off(s,a,b,c):
         if a[1] == "fizz":
             hexchat.unhook(s.fizz)
@@ -128,7 +128,7 @@ class loader:
             s.nim = 0
         else:
             hexchat.prnt("args must be valid")
-        return hexchat.EAT_NONE
+        return hexchat.EAT_HEXCHAT
 load = loader()
 hexchat.hook_command("on",load.on)
 hexchat.hook_command("off",load.off)

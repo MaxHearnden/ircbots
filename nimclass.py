@@ -22,7 +22,7 @@ class nim:
                 else:
                     comgo=s.test((tmp[1]-tmp[0])%(tmp[2]+1),tmp[2])
                     tmp[0]+=comgo
-                    hexchat.command("msg "+name+" you played "+str(rgo)+" and I played "+str(comgo)+" which brung the total to "+str(tmp[0]))
+                    hexchat.command("msg "+name+" you played "+str(rgo)+" and I played "+str(comgo)+" which brought the total to "+str(tmp[0]))
                     if tmp[0] >= tmp[1]:
                         hexchat.command("msg "+name+" i win nim and I get 1 million pounds, bye")
                         del s.nimmem[name]
@@ -38,7 +38,7 @@ class nim:
                     tmp=s.nimmem[name]
                     comgo=s.test((tmp[1]-tmp[0])%(tmp[2]+1),tmp[2])
                     tmp[0]+=comgo
-                    hexchat.command("msg "+name+" I played "+str(comgo)+" which brung the total to "+str(tmp[0]))
+                    hexchat.command("msg "+name+" I played "+str(comgo)+" which brought the total to "+str(tmp[0]))
                     if tmp[0] >= tmp[1]:
                         hexchat.command("msg "+name+" i win nim and I get 1 million pounds, bye")
                         del s.nimmem[name]
@@ -57,7 +57,7 @@ class nim:
                     hexchat.command("msg "+name+" setup must be valid")
                     del s.nimmem[name]
             else:
-                hexchat.command("msg "+name+" welcome to the autoated nim just privmsg me with a message in the format \"set 31(total limit),6(indlim)\" bye")
+                hexchat.command("msg "+name+" welcome to the automated nim just privmsg me with a message in the format \"set 31(total limit),6(indlim)\" bye")
         return hexchat.EAT_NONE
     def test(s,a,b):
         a-=1

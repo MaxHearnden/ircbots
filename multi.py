@@ -10,8 +10,8 @@ class nim:
         #print a
     def nimmove(s,a,b,c):
         #print a
-        print s.nimmem          # uncomment to see memory
-        name = a[0].split("!")[0][1:]
+        #print s.nimmem          # uncomment to see memory
+        name = a[0]
         if name in s.nimmem:
             try:
                 go = int(a[3][1:])
